@@ -52,11 +52,12 @@ VALUES
 (11, 'Mark', 'Brendanawicz', 'City Planner', 57000, 3),
 (12, 'Craig', 'Middlebrooks', 'Parks Director', 65000,1);
 
-
+-- using SERIAL automatically generates unique values for department_id
 CREATE TABLE parks_departments (
   department_id SERIAL PRIMARY KEY,
   department_name varchar(50) NOT NULL
 );
+
 
 INSERT INTO parks_departments (department_name)
 VALUES
