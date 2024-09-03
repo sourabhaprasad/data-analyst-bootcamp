@@ -30,3 +30,21 @@ ORDER BY gender, age DESC;
 SELECT *
 FROM employee_demographics
 ORDER BY 5, 4;
+
+
+
+-- HAVING vs WHERE
+SELECT occupation, ROUND(AVG(salary), 2)
+FROM employee_salary
+GROUP BY occupation;
+
+SELECT occupation, ROUND(AVG(salary), 2)
+FROM employee_salary
+WHERE occupation LIKE '%Manager%'
+GROUP BY occupation;
+
+SELECT occupation, ROUND(AVG(salary), 2)
+FROM employee_salary
+WHERE occupation LIKE '%Manager%'
+GROUP BY occupation
+HAVING AVG(salary)>70000;
