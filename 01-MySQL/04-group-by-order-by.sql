@@ -48,3 +48,23 @@ FROM employee_salary
 WHERE occupation LIKE '%Manager%'
 GROUP BY occupation
 HAVING AVG(salary)>70000;
+
+SELECT occupation, ROUND(AVG(salary), 2)
+FROM employee_salary
+GROUP BY occupation
+HAVING AVG(salary)>70000;
+
+
+-- LIMIT
+SELECT *
+FROM employee_demographics
+ORDER BY age DESC
+LIMIT 3;
+
+
+
+-- ALIASING
+SELECT occupation, ROUND(AVG(salary), 2) AS avg_salary
+FROM employee_salary
+GROUP BY occupation
+HAVING AVG(salary)>70000;
