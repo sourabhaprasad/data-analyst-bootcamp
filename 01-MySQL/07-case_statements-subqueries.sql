@@ -39,12 +39,21 @@ ORDER BY employee_id;
 
 
 -- SELECT statement 
+
+SELECT first_name, salary, AVG(salary)
+FROM employee_salary
+GROUP BY first_name, salary;
+-- cannot use aggregation in select statement without using group by clause.
+-- additionally, AVG(salary) calculates the average of each row instead of the column
+-- to overcome this, the below subquery is used
+
 SELECT first_name, last_name, salary,
 (
     SELECT ROUND(AVG(salary), 2) Avg_salary
     FROM employee_salary
 )
 FROM employee_salary;
+
 
 
 -- 
